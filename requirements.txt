@@ -8,4 +8,5 @@ seaborn
 xgboost
 lightgbm
 catboost
-pyfutmob
+category_encoders
+autogluon.tabular

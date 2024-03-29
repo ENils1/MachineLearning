@@ -1,2 +1,6 @@
-/RawData/
+Archive/
+Datasets/EncodedData/*
+DataSets/RawData/*
 *.idea
+*.venv
+AutogluonModels/
