@@ -1,5 +1,5 @@
 Archive/
-Datasets/EncodedData/*
+DataSets/EncodedData/*
 DataSets/RawData/*
 *.idea
 *.venv
