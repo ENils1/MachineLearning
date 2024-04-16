@@ -7,7 +7,5 @@ matplotlib
 seaborn
 xgboost
 lightgbm
-catboost
-category_encoders
 autogluon.tabular
 ipywidgets
