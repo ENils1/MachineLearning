@@ -7,8 +7,8 @@ from sklearn.metrics import mean_absolute_error
 
 def start(filename):
     df = pd.read_csv(f"../DataSets/EncodedData/{filename}", sep=",", encoding="UTF-8")
-    X = df.drop(columns=['log_market_value_base10', 'name', 'market_value_in_eur'])
-    y = df['log_market_value_base10']
+    X = df.drop(columns=['Logarithmic Market Value', 'Name', 'Market Value', "sub_position"])
+    y = df['Logarithmic Market Value']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.10, random_state=42)
     return X_train, X_test, y_train, y_test, df
 
@@ -40,7 +40,7 @@ def train(model, X_train, X_test, y_train, y_test):
     print("\nTest Set Scores:")
     print("Mean Absolute Error (MAE):", round(mae / 1000000, 2), "M")
     print("Mean Absolute Percentage Error (MAPE):", round(mape, 2), "%")
-    
+
     return y_pred, y_pred_original, y_test_original
 
 
