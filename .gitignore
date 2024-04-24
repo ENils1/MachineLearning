@@ -4,3 +4,4 @@ DataSets/RawData/*
 *.idea
 *.venv
 AutogluonModels/
+agg/
