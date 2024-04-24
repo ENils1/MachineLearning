@@ -14,16 +14,15 @@ def start(filename):
 
 def train(model, X_train, X_test, y_train, y_test):
     # Train the model
-
     model.fit(X_train, y_train)
     
     # Make predictions on the training data
     y_train_pred = model.predict(X_train)
-    y_train_pred_original = np.power(10, y_train_pred)
+    y_train_original = np.power(10, y_train_pred)
     
     # Calculate MAE and MAPE on the training data
-    mae_train = mean_absolute_error(np.power(10, y_train), y_train_pred_original)
-    mape_train = np.mean(np.abs((np.power(10, y_train) - y_train_pred_original) / np.power(10, y_train))) * 100
+    mae_train = mean_absolute_error(np.power(10, y_train), y_train_original)
+    mape_train = np.mean(np.abs((np.power(10, y_train) - y_train_original) / np.power(10, y_train))) * 100
     
     print("Training Set Scores:")
     print("Mean Absolute Error (MAE):", round(mae_train / 1000000, 2), "M")
@@ -42,7 +41,7 @@ def train(model, X_train, X_test, y_train, y_test):
     print("Mean Absolute Error (MAE):", round(mae / 1000000, 2), "M")
     print("Mean Absolute Percentage Error (MAPE):", round(mape, 2), "%")
     
-    return y_pred, y_pred_original, y_test_original, y_train_pred_original, mae, mae_train
+    return y_pred, y_pred_original, y_test_original
 
 
 def display(df, X_test, y_pred):
