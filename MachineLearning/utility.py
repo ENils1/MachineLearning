@@ -7,7 +7,8 @@ from sklearn.metrics import mean_absolute_error
 
 def start(filename):
     df = pd.read_csv(f"../DataSets/EncodedData/{filename}", sep=",", encoding="UTF-8")
-    X = df.drop(columns=['Logarithmic Market Value', 'Name', 'Market Value', "sub_position"])
+    
+    X = df.drop(columns=['Logarithmic Market Value', 'Name', 'Market Value'])
     y = df['Logarithmic Market Value']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.10, random_state=42)
     return X_train, X_test, y_train, y_test, df
